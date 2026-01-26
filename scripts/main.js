@@ -9,3 +9,5 @@ const MOCK_PARAMETERS = {
 };
 
 const progressBlock = createProgress(PROGRESS_BLOCK, MOCK_PARAMETERS);
+
+progressBlock.setValue(40);
