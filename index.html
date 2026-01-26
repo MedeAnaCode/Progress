@@ -6,7 +6,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<div class="progress">
+    <div class="progress__block progress-block">
+        <h1 class="progress-block__title">Progress</h1>
+        <div class="progress-block__root" id="progress-root"></div>
+    </div>
+    <section class="progress__parameters parameters-panel">
+        <label class="parameters-panel__label">
+            <input class="parameters-panel__number-input" type="number" min="0" max="100" step="1">
+            Value
+        </label>
+        <label class="parameters-panel__label">
+            <input class="parameters-panel__checkbox-input" type="checkbox">
+            Animate
+        </label>
+        <label class="parameters-panel__label">
+            <input class="parameters-panel__checkbox-input" type="checkbox">
+            Hide
+        </label>
+    </section>
+</div>
 <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
