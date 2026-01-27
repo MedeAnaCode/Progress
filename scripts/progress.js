@@ -1,6 +1,7 @@
 const svgNS = "http://www.w3.org/2000/svg";
+//Надо будет вынести логику создания svg-картинки, очень громоздко
 
-function createProgress (el, initialParameters = {value: 0, animated: true, hidden: false}, animatedClass, hiddenClass) {
+function createProgress (el, animatedClass, hiddenClass, initialParameters = {value: 0, animated: true, hidden: false}) {
     const params = initialParameters;
     const progressWidth = 100;
     const circleCenter = progressWidth/2;
