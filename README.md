@@ -9,10 +9,11 @@
    `const progressBlock = createProgress(el, animatedClass, hiddenClass, initialParameters);`  
 3. Состояния характерисуются css-классами:
  - Normal - по умолчанию
- - Animated - 'progress-block__root--hidden'
- - Hidden - 'progress-block__root--animated'
+ - Animated - 'progress-block__root--animated'
+ - Hidden - 'progress-block__root--hidden'
 4. Для привязки прогресс-блока к панели управления создана функция initParametersPanel, которая принимает на вход элементы управления и прогресс-блок:
 
    `initParametersPanel (valueInput, toggleAnimation, toggleHidden, cbs)`  
 
-    * Субъективное замечание: честно говоря, хотелось сделать её одним из методов прогресс-блока (как-то логично), но побоялась, что это будет противоречить условию (API не прибит к вёрстке).
+    * Субъективное замечание: честно говоря, хотелось сделать её одним из методов прогресс-блока (как-то логично), но побоялась, что это будет противоречить условию ("API не прибит к вёрстке").
+5. Элементы базово оформлены по референсу. Шрифт: Inter.

@@ -19,7 +19,7 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     circle.setAttribute('cy', `${circleCenter}`);
     circle.setAttribute('r', `${r}`);
     circle.setAttribute('fill', 'none');
-    circle.setAttribute('stroke', 'blue');
+    circle.setAttribute('stroke', '#005dff');
     circle.setAttribute('stroke-width', '10');
     circle.setAttribute('stroke-dasharray', `${strokeLength}`);
     const backgroundCircle = document.createElementNS(svgNS,'circle');
@@ -27,7 +27,7 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     backgroundCircle.setAttribute('cy', `${circleCenter}`);
     backgroundCircle.setAttribute('r', `${r}`);
     backgroundCircle.setAttribute('fill', 'none');
-    backgroundCircle.setAttribute('stroke', 'yellow');
+    backgroundCircle.setAttribute('stroke', '#DFE6F0');
     backgroundCircle.setAttribute('stroke-width', '10');
 
     svg.append(backgroundCircle);

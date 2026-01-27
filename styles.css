@@ -1,3 +1,4 @@
+/*анимация*/
 @keyframes rotation {
     from {
         transform: rotate(-90deg);
@@ -7,12 +8,48 @@
     }
 }
 
+.main-container {
+    margin: 0 auto;
+}
+
+/*progress*/
+.progress {
+    margin: 0 auto;
+    padding: 24px 20px;
+    width: 100%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*progress-block*/
+.progress-block {
+    width: 100%;
+    min-width: 222px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-block__title {
+    font-size: 14px;
+    line-height: 16px;
+    align-self: self-start;
+}
+
 .progress-block__root {
     width: 100px;
     height: 100px;
     transform: rotate(-90deg);
+    transition: transform 5s;
 }
 
+/*Может, потом ещё сделаю класс для normal и там будет transform: rotate(-90deg);*/
 .progress-block__root--animated {
     animation: rotation 3s linear infinite;
 }
@@ -24,4 +61,10 @@
 .progress-block__root svg{
     width: 100%;
     height: 100%;
+}
+
+/*parameters-panel*/
+.parameters-panel {
+    display: flex;
+    flex-direction: column;
 }
