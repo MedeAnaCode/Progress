@@ -1,3 +1,24 @@
+/*глобальные теги*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*утилиты*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 /*анимация*/
 @keyframes rotation {
     from {
@@ -9,7 +30,7 @@
 }
 
 .main-container {
-    margin: 0 auto;
+    margin: 0;
 }
 
 /*progress*/
@@ -67,4 +88,66 @@
 .parameters-panel {
     display: flex;
     flex-direction: column;
+}
+
+.parameters-panel__label {
+    display: flex;
+}
+
+.parameters-panel__number-input {
+    display: block;
+    background-color: #FFFFFF;
+    width: 48px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid #000000;
+    margin-right: 10px;
+    appearance: none;
+}
+
+.parameters-panel__number-input::-webkit-outer-spin-button,
+.parameters-panel__number-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.parameters-panel__number-input {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield;
+}
+
+.parameters-panel__checkbox-control-mark {
+    display: block;
+    background-color: #DFE6F0;
+    width: 48px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid #DFE6F0;
+    position: relative;
+    margin-right: 10px;
+
+    &::before {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        transition: transform 0.5s;
+    }
+}
+
+/*Стоит ли оборачивать цвета в переменные?*/
+.parameters-panel__checkbox-input[type="checkbox"]:checked + .parameters-panel__checkbox-control-mark {
+    border-color: #005dff;
+    background-color: #005dff;
+
+    &::before {
+        transform: translate(19px);
+    }
 }
