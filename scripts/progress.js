@@ -57,7 +57,17 @@ function createProgress (el, initialParameters = {value: 0, animated: true, hidd
         render();
     }
 
-    return {setValue};
+    function setAnimated(bool) {
+        params.animated = bool;
+        render();
+    }
+
+    function setHidden(bool) {
+        params.hidden = bool;
+        render();
+    }
+
+    return {setValue, setAnimated, setHidden};
 }
 
 export {createProgress};

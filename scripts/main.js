@@ -13,3 +13,4 @@ const MOCK_PARAMETERS = {
 const progressBlock = createProgress(PROGRESS_BLOCK, MOCK_PARAMETERS, ANIMATED_CLASS, HIDDEN_CLASS);
 
 progressBlock.setValue(40);
+progressBlock.setHidden(false);
