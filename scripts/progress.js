@@ -1,6 +1,6 @@
 const svgNS = "http://www.w3.org/2000/svg";
 
-function createProgress (el, initialParameters = {value: 0, animated: true, hidden: false}) {
+function createProgress (el, initialParameters = {value: 0, animated: true, hidden: false}, animatedClass, hiddenClass) {
     const params = initialParameters;
     const progressWidth = 100;
     const circleCenter = progressWidth/2;
@@ -27,6 +27,26 @@ function createProgress (el, initialParameters = {value: 0, animated: true, hidd
 
     function render() {
         circle.setAttribute('stroke-dashoffset', `${strokeOffset}`);
+
+        if (params.animated) {
+            if (!el.classList.contains(animatedClass)) {
+                el.classList.add(animatedClass);
+            }
+        } else {
+            if (el.classList.contains(animatedClass)) {
+                el.classList.remove(animatedClass);
+            }
+        }
+
+        if (params.hidden) {
+            if (!el.classList.contains(hiddenClass)) {
+                el.classList.add(hiddenClass);
+            }
+        } else {
+            if (el.classList.contains(hiddenClass)) {
+                el.classList.remove(hiddenClass);
+            }
+        }
     }
 
     render();

@@ -1,7 +1,24 @@
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .progress-block__root {
     width: 100px;
     height: 100px;
     transform: rotate(-90deg);
+}
+
+.progress-block__root--animated {
+    animation: rotation 3s linear infinite;
+}
+
+.progress-block__root--hidden {
+    display: none;
 }
 
 .progress-block__root svg{
