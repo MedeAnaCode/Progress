@@ -4,12 +4,15 @@
 Сделано:
 1. Дуга прогресса реализована с помощью svg-элементов.
 2. Созданы методы, относящиеся к экземпляру дуги, для переключения состояний (setValue, setAnimated, setHidden).
-    Для создания нового прогресс-блока создана функция, которая принимает - DOM-элемент, классы состояний и начальные параметры(опционально), и возращает объект с методами управления параметрами.
-   `const progressBlock = createProgress(el, animatedClass, hiddenClass, initialParameters);`
+    Для создания нового прогресс-блока создана функция, которая принимает - DOM-элемент, классы состояний и начальные параметры(опционально), и возращает объект с методами управления параметрами.  
+
+   `const progressBlock = createProgress(el, animatedClass, hiddenClass, initialParameters);`  
 3. Состояния характерисуются css-классами:
  - Normal - по умолчанию
  - Animated - 'progress-block__root--hidden'
  - Hidden - 'progress-block__root--animated'
 4. Для привязки прогресс-блока к панели управления создана функция initParametersPanel, которая принимает на вход элементы управления и прогресс-блок:
-   `initParametersPanel (valueInput, toggleAnimation, toggleHidden, cbs)`
+
+   `initParametersPanel (valueInput, toggleAnimation, toggleHidden, cbs)`  
+
     * Субъективное замечание: честно говоря, хотелось сделать её одним из методов прогресс-блока (как-то логично), но побоялась, что это будет противоречить условию (API не прибит к вёрстке).
