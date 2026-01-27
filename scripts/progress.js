@@ -21,7 +21,15 @@ function createProgress (el, initialParameters = {value: 0, animated: true, hidd
     circle.setAttribute('stroke', 'blue');
     circle.setAttribute('stroke-width', '10');
     circle.setAttribute('stroke-dasharray', `${strokeLength}`);
+    const backgroundCircle = document.createElementNS(svgNS,'circle');
+    backgroundCircle.setAttribute('cx', `${circleCenter}`);
+    backgroundCircle.setAttribute('cy', `${circleCenter}`);
+    backgroundCircle.setAttribute('r', `${r}`);
+    backgroundCircle.setAttribute('fill', 'none');
+    backgroundCircle.setAttribute('stroke', 'yellow');
+    backgroundCircle.setAttribute('stroke-width', '10');
 
+    svg.append(backgroundCircle);
     svg.append(circle);
     el.append(svg);
 
