@@ -33,6 +33,9 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     svg.append(backgroundCircle);
     svg.append(circle);
     el.append(svg);
+    //Закончили с svg
+
+    el.classList.add('progress-root');
 
     function render() {
         circle.setAttribute('stroke-dashoffset', `${strokeOffset}`);
@@ -61,7 +64,7 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     render();
 
     function setValue(num) {
-        params.value = num;
+        params.value = Number.isFinite(+num) ? Math.min(100, Math.max(0, +num)) : 0; //Чтобы не зависеть от значений, валидируемых вёрсткой
         strokeOffset = strokeLength * (100 - params.value)/100;
         render();
     }

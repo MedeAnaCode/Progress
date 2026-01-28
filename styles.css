@@ -100,25 +100,9 @@
 }
 
 .progress-block__root {
-    width: 136px;
-    height: 136px;
-
     @media (orientation: landscape) {
         margin-left: 35px;
     }
-}
-
-.progress-block__root--animated svg {
-    animation: rotation 2s linear infinite;
-}
-
-.progress-block__root--hidden {
-    display: none;
-}
-
-.progress-block__root svg{
-    width: 100%;
-    height: 100%;
 }
 
 /*parameters-panel*/
@@ -216,4 +200,23 @@
 
 .parameters-panel__checkbox-input:disabled + .parameters-panel__checkbox-control-mark {
     opacity: 0.6;
+}
+
+/*Всё, относящееся непосредственно к progress*/
+.progress-root {
+    width: 136px;
+    height: 136px;
+}
+
+.progress-root--animated svg {
+    animation: rotation 2s linear infinite;
+}
+
+.progress-root--hidden {
+    display: none;
+}
+
+.progress-root svg{
+    width: 100%;
+    height: 100%;
 }

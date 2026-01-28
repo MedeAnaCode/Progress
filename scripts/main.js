@@ -1,13 +1,13 @@
 import {createProgress} from "./progress.js";
 import {initParametersPanel} from "./parameters-panel.js";
 
-const PROGRESS_BLOCK = document.querySelector('#progress-root');
+const PROGRESS_BLOCK = document.querySelector('#progress');
 const VALUE_INPUT = document.querySelector('#value-input');
 const TOGGLE_ANIMATION = document.querySelector('#toggle-animation');
 const TOGGLE_HIDDEN = document.querySelector('#toggle-hidden');
 
-const ANIMATED_CLASS =  'progress-block__root--animated';
-const HIDDEN_CLASS = 'progress-block__root--hidden';
+const ANIMATED_CLASS =  'progress-root--animated';
+const HIDDEN_CLASS = 'progress-root--hidden';
 
 const InitialValues = {
     value: VALUE_INPUT.value,
