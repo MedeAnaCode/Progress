@@ -1,8 +1,9 @@
 const svgNS = "http://www.w3.org/2000/svg";
-//Надо будет вынести логику создания svg-картинки, очень громоздко
 
 function createProgress (el, animatedClass, hiddenClass, initialParameters = {value: 0, animated: false, hidden: false}) {
     const params = initialParameters;
+
+    //Рисуем svg
     const progressWidth = 100;
     const circleCenter = progressWidth/2;
     const r = circleCenter - 10;
@@ -20,6 +21,7 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     circle.setAttribute('stroke', '#005dff');
     circle.setAttribute('stroke-width', '8');
     circle.setAttribute('stroke-dasharray', `${strokeLength}`);
+    circle.setAttribute('transform', `rotate(-90 ${circleCenter} ${circleCenter})`);
     const backgroundCircle = document.createElementNS(svgNS,'circle');
     backgroundCircle.setAttribute('cx', `${circleCenter}`);
     backgroundCircle.setAttribute('cy', `${circleCenter}`);
