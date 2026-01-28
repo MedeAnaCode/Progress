@@ -10,8 +10,6 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     let strokeOffset = strokeLength * (100 - params.value)/100;
 
     const svg = document.createElementNS(svgNS,'svg');
-    svg.setAttribute('width', `${progressWidth}`);
-    svg.setAttribute('height', `${progressWidth}`);
     svg.setAttribute('viewBox', '0 0 100 100');
 
     const circle = document.createElementNS(svgNS,'circle');
@@ -20,7 +18,7 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     circle.setAttribute('r', `${r}`);
     circle.setAttribute('fill', 'none');
     circle.setAttribute('stroke', '#005dff');
-    circle.setAttribute('stroke-width', '10');
+    circle.setAttribute('stroke-width', '8');
     circle.setAttribute('stroke-dasharray', `${strokeLength}`);
     const backgroundCircle = document.createElementNS(svgNS,'circle');
     backgroundCircle.setAttribute('cx', `${circleCenter}`);
@@ -28,7 +26,7 @@ function createProgress (el, animatedClass, hiddenClass, initialParameters = {va
     backgroundCircle.setAttribute('r', `${r}`);
     backgroundCircle.setAttribute('fill', 'none');
     backgroundCircle.setAttribute('stroke', '#DFE6F0');
-    backgroundCircle.setAttribute('stroke-width', '10');
+    backgroundCircle.setAttribute('stroke-width', '8');
 
     svg.append(backgroundCircle);
     svg.append(circle);

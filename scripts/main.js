@@ -11,7 +11,7 @@ const HIDDEN_CLASS = 'progress-block__root--hidden';
 
 const MOCK_PARAMETERS = {
     value: 60,
-    animated: true,
+    animated: false,
     hidden: false,
 };
 

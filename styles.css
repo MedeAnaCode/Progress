@@ -37,8 +37,6 @@
 .progress {
     margin: 0 auto;
     padding: 24px 20px;
-    width: 100%;
-    min-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,10 +46,15 @@
     font-style: normal;
 }
 
+.progress__block {
+    margin-bottom: 35px;
+}
+
 /*progress-block*/
 .progress-block {
     width: 100%;
     min-width: 222px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,11 +64,15 @@
     font-size: 14px;
     line-height: 16px;
     align-self: self-start;
+    display: block;
+    margin-top: 2px;
+    margin-left: 1px;
+    margin-bottom: 57px;
 }
 
 .progress-block__root {
-    width: 100px;
-    height: 100px;
+    width: 136px;
+    height: 136px;
     transform: rotate(-90deg);
     transition: transform 5s;
 }
@@ -76,7 +83,7 @@
 }
 
 .progress-block__root--hidden {
-    display: none;
+    visibility: hidden;
 }
 
 .progress-block__root svg{
@@ -86,23 +93,33 @@
 
 /*parameters-panel*/
 .parameters-panel {
+    padding: 48px;
     display: flex;
     flex-direction: column;
+    gap: 11px;
 }
 
 .parameters-panel__label {
     display: flex;
+    align-items: center;
+    font-size: 15px;
+    gap: 20px;
+    margin-right: 14px;
 }
 
 .parameters-panel__number-input {
+    padding: 0 6px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
     display: block;
     background-color: #FFFFFF;
-    width: 48px;
+    width: 44px;
     height: 30px;
     border-radius: 15px;
     border: 2px solid #000000;
-    margin-right: 10px;
-    appearance: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .parameters-panel__number-input::-webkit-outer-spin-button,
@@ -111,43 +128,37 @@
     margin: 0;
 }
 
-.parameters-panel__number-input {
-    -moz-appearance: textfield; /* Firefox */
-    appearance: textfield;
-}
-
 .parameters-panel__checkbox-control-mark {
     display: block;
     background-color: #DFE6F0;
-    width: 48px;
-    height: 30px;
+    width: 44px;
+    height: 29px;
     border-radius: 15px;
     border: 2px solid #DFE6F0;
     position: relative;
-    margin-right: 10px;
+}
 
-    &::before {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        content: "";
-        width: 25px;
-        height: 25px;
-        background-color: #FFFFFF;
-        border-radius: 50%;
-        transition: transform 0.5s;
-    }
+.parameters-panel__checkbox-control-mark::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    width: 23px;
+    height: 23px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    transition: transform 0.5s;
 }
 
 /*Стоит ли оборачивать цвета в переменные?*/
 .parameters-panel__checkbox-input[type="checkbox"]:checked + .parameters-panel__checkbox-control-mark {
     border-color: #005dff;
     background-color: #005dff;
+}
 
-    &::before {
-        transform: translate(19px);
-    }
+.parameters-panel__checkbox-input[type="checkbox"]:checked + .parameters-panel__checkbox-control-mark::before {
+    transform: translateX(18px);
 }
