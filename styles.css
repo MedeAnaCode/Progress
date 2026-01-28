@@ -22,15 +22,16 @@
 /*анимация*/
 @keyframes rotation {
     from {
-        transform: rotate(-90deg);
+        transform: rotate(0deg);
     }
     to {
-        transform: rotate(270deg);
+        transform: rotate(360deg);
     }
 }
 
 .main-container {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 /*progress*/
@@ -72,10 +73,14 @@
 /*progress-block*/
 .progress-block {
     width: 100%;
-    min-height: 100px;
+    min-height: 211px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (orientation: landscape) {
+        min-height: 208px;
+    }
 }
 
 .progress-block__title {
@@ -98,20 +103,18 @@
     width: 136px;
     height: 136px;
     transform: rotate(-90deg);
-    transition: transform 5s;
 
     @media (orientation: landscape) {
         margin-left: 35px;
     }
 }
 
-/*Может, потом ещё сделаю класс для normal и там будет transform: rotate(-90deg);*/
-.progress-block__root--animated {
-    animation: rotation 3s linear infinite;
+.progress-block__root--animated svg {
+    animation: rotation 2s linear infinite;
 }
 
 .progress-block__root--hidden {
-    visibility: hidden;
+    display: none;
 }
 
 .progress-block__root svg{

@@ -2,7 +2,6 @@
 //toggleAnimation - чекбокс, переключающий анимацию
 //toggleHidden - чекбокс, скрывающий блок
 //В cbs ожидаем объект Progress с методами (setValue, setAnimated, setHidden)
-
 function initParametersPanel (valueInput, toggleAnimation, toggleHidden, cbs) {
     valueInput.addEventListener('input', (e) => {
         cbs.setValue(e.currentTarget.value);
