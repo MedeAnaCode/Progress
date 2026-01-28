@@ -19,16 +19,6 @@
     overflow: hidden;
 }
 
-/*анимация*/
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .main-container {
     margin: 0 auto;
     max-width: 700px;
@@ -203,6 +193,15 @@
 }
 
 /*Всё, относящееся непосредственно к progress*/
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .progress-root {
     width: 136px;
     height: 136px;
