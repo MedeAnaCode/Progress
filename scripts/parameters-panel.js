@@ -4,7 +4,14 @@
 //В cbs ожидаем объект Progress с методами (setValue, setAnimated, setHidden)
 function initParametersPanel (valueInput, toggleAnimation, toggleHidden, cbs) {
     valueInput.addEventListener('input', (e) => {
-        cbs.setValue(e.currentTarget.value);
+        if (!e.currentTarget.validity.valid) return;
+        cbs.setValue(Number(e.currentTarget.value));
+    });
+
+    valueInput.addEventListener('change', () => {
+        const n = Number(valueInput.value);
+        if (!Number.isFinite(n)) return;
+        valueInput.value = Math.min(100, Math.max(0, n));
     });
 
     toggleAnimation.addEventListener('change', (e) => {
